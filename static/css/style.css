@@ -1,0 +1,36 @@
+html, body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+ul.mainmenu {
+    list-style: none;
+    background: #C0C0C0;
+    height: 50px;
+    color: #2F4F4F;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+ul.mainmenu li {
+    float: left;
+    margin: 15px 40px 0 50px;
+}
+
+ul.mainmenu li a {
+    text-decoration: none;
+    color: #2F4F4F;
+}
+
+.form-user-data label {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.form-user-data p {margin: 10px 0 10px 0;}
+.form-user-data input[type=submit], textarea {
+    font-size: 16px;
+}
