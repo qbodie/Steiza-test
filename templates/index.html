@@ -2,5 +2,8 @@
 
 {% block content %}
     {{ super() }}
+{% for msg in get_flashed_messages() %}
+<div class="flash">{{msg}}</div>
+{% endfor %}
     <h1>Главная страница</h1>
 {% endblock content %}
