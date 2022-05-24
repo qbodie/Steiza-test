@@ -2,8 +2,11 @@
 
 {% block content %}
 {{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
 <form action="/sign-in" method="post" class="form-user-data">
-    <p><label>Имя: </label> <input type="text" name="username" value="" requied />
+    <p><label>E-mail: </label> <input type="text" name="email" value="" requied />
     <p><label>Пароль: </label> <input type="password" name="password" value="" requied />
     <p><input type="submit" value="Войти" />
 </form>

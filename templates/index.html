@@ -2,8 +2,12 @@
 
 {% block content %}
     {{ super() }}
-{% for msg in get_flashed_messages() %}
-<div class="flash">{{msg}}</div>
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
 {% endfor %}
-    <h1>Главная страница</h1>
+<form action="/index" method="post" class="form-user-data">
+    <p><label>Имя: </label> <input type="text" name="name" value="" requied />
+    <p><label>Фамилия: </label> <input type="text" name="lastname" value="" requied />
+    <p><input type="submit" value="Отправить" />
+</form>
 {% endblock content %}

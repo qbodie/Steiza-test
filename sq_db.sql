@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS contacts(
     password text NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS name_lastname (
+CREATE TABLE IF NOT EXISTS inputs (
     id integer PRIMARY KEY AUTOINCREMENT,
     name text NOT NULL,
     lastname text NOT NULL
