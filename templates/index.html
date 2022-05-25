@@ -2,6 +2,8 @@
 
 {% block content %}
     {{ super() }}
+<h2>{{ title }}</h2>
+<div>{{test_text}}</div>
 {% for cat, msg in get_flashed_messages(True) %}
 <div class="flash {{cat}}">{{msg}}</div>
 {% endfor %}

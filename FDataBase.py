@@ -1,5 +1,7 @@
 import sqlite3
 
+from flask import flash, redirect
+
 
 class FDataBase:
     def __init__(self, db):
@@ -21,7 +23,7 @@ class FDataBase:
             self.__cur.execute(f"SELECT COUNT() as 'count' FROM contacts WHERE email LIKE '{email}'")
             response = self.__cur.fetchone()
             if response['count'] > 0:
-                print('Пользователь с таким email уже зарегестрирован.')
+                flash("Пользователь с таким email уже зарегестрирован.", 'error')
                 return False
 
             self.__cur.execute("INSERT INTO contacts VALUES(NULL, ?, ?, ?)", (username, email, hpsw))
@@ -58,11 +60,3 @@ class FDataBase:
 
         return False
 
-    def addInput(self, name, lastname):
-        try:
-            self.__cur.execute("INSERT INTO inputs VALUES(NULL, ?, ?)", (name, lastname))
-            self.__db.commit()
-        except sqlite3.Error as e:
-            print(str(e))
-            return False
-        return True
